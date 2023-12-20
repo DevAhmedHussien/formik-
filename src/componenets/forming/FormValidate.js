@@ -3,56 +3,38 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./stepThree";
 import { Link } from "react-router-dom";
+import icon from '../../images/Check Small.png'
+import BarControl from "./BarControl";
+import Modal from './Modal'
 export default function FormValidate(){
-    const [currentStep, setCurrentStep] = useState(1);
-    const handleNextStep = () => {
+    const [showModal, setShowModal] = useState(false);
+    const handleOpenModal = () => {
+    setShowModal(true);
+    };
+    const handleCloseModal = () => {
+    setShowModal(false);
+    }
+const steps = ['1', '2', '3'];
+const [currentStep, setCurrentStep] = useState(1)
+const handleNextStep = () => {
             setCurrentStep(currentStep + 1);
-        };
-    const handlePrevStep = () => {
+    };
+const handlePrevStep = () => {
             setCurrentStep(currentStep - 1);
-        };
-        const handleStepClick = (step) => {
+    };
+    const handleStepClick = (step) => {
             setCurrentStep(step);
-        };
-        const steps = ['1', '2', '3'];
-    return(
-        <>
-            <div className='containerFormValidate'>
-      {/* Progress Bar */}
-    <div style={{ 
-        display:'flex',
-        position:'absolute',
-        justifyContent:'space-between',
-        width: '680px',
-        height: '48px',
-        top: '62px',
-        left: '110px',
-        borderRadius: '8px',
-        // background:'silver'
-}}>
-        {steps.map((step, index) => (
-            <>   <div
-            key={index}
-            onClick={() => handleStepClick(index + 1)}
-            style={{
-                flex: 1,
-                borderTop: `10px solid ${ index < currentStep ? 'Purple' : 'gray'}`,
-                padding: '10px',
-                //  borderRadius: '100px',
-                textAlign:step === '3' ? 'right': step === '2' ? 'center': 'left',
-                fontWeight: index === currentStep - 1 ? 'bold' : 'normal',
-                color: index < currentStep ? 'blue' : 'gray',
-                cursor: 'pointer',
-            }}
-        >
-            {step}
-        </div> 
-        </>
-        
-        ))}
-    </div>
+    };
+
+
+return(
+    <>
+<div className='containerFormValidate'>
+  {/* Progress Bar */}
+    <BarControl steps={steps} currentStep={currentStep} handleStepClick={handleStepClick} />
 <div>
   {/* Form Content */}
+    <form >
     {currentStep === 1 ?
         <div>
             <div>
@@ -65,10 +47,9 @@ export default function FormValidate(){
         </div>
         :currentStep === 2 ?
         <div>
-            
             <div>
-            <div className="dalee_2" onClick={handleNextStep}><p>Далее</p></div>
-     <button className="nazad_2" onClick={handlePrevStep}><p>Назад</p></button> 
+                <div className="dalee_2" onClick={handleNextStep}><p>Далее</p></div>
+                <button className="nazad_2" onClick={handlePrevStep}><p>Назад</p></button> 
             </div>
             <StepTwo/>
         </div>
@@ -76,7 +57,7 @@ export default function FormValidate(){
         currentStep === 3 ?
         <div>
             <div>
-                <button className="sending" onClick={handleNextStep}><p>Отправить</p></button>
+                <button className="sending" onClick={handleOpenModal}><p>Отправить</p></button>
                 <button className="nazad_3" onClick={handlePrevStep}><p>Назад</p></button> 
             </div>
             <StepThree/>
@@ -84,10 +65,11 @@ export default function FormValidate(){
         :
         null
         }
-</div>
-    
+  </form>
 
-            </div>
+</div>
+        <Modal showModal={showModal} handleClose={handleCloseModal} />
+</div>
         </>
     )
 }

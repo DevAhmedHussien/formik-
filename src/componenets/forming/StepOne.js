@@ -19,11 +19,16 @@ export default function StepOne(){
             </div>
             <div className="selectPol">
                 <label>Пол</label>
+            <div  className ='select-box'>
                 <select>
-                    <option>Не выбрано</option>
-                    <option>мужской</option>
-                    <option>женский</option>
+                        <option>Не выбрано</option>
+                        <option>мужской</option>
+                        <option>женский</option>
                 </select>
+                <div className="icon-Container">
+                    <div className="inner"></div>
+                </div>
+            </div>
                 <p>Tip</p>
             </div>
         </div>

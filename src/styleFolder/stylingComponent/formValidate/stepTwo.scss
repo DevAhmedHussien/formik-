@@ -1,0 +1,106 @@
+%main-input {
+    width: 300px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 4px;
+    gap: 12px;
+    font-family: TT Travels;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: 1px solid #00000029;
+    color: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+}
+.BoxStepTwo{
+position:absolute;
+width: 336px;
+height:436px;
+top: 176px;
+left: 110px;
+display: flex;
+flex-direction: column;
+gap: 24px ;
+.advantages{
+    width: 336px;
+    height: 228px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+        label{
+            width: 300px;
+            height: 20px;
+            font-family: TT Travels;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #333333;
+        }
+        .innedAdvantages{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            input{
+            @extend %main-input;
+        }
+            img{
+                width: 20px;
+                height: 19px;
+                padding: 1.9px 2.5px 1.9px 2.5px;
+                cursor: pointer;
+        }
+        }
+        .addBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 44px;
+            cursor: pointer;
+            height: 44px;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1.5px solid #5558FA;
+            // background: #5558FA;
+                img{
+                    width: 12px;
+                    height: 12px;
+                }
+        }
+     
+
+}
+.checkGroup,.radioGroup{
+    width: 300px;
+    height: 80px;
+    h3{
+        width: 300px;
+        height: 20px;
+        font-family: TT Travels;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    label{ 
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 20px;
+        gap: 8px;
+        font-family: TT Travels;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    }
+}
+

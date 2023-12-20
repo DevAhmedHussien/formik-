@@ -1,0 +1,220 @@
+/* Modal.css */
+%main-Modal-box {
+    background: #FFFFFF;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    width: 460px;
+    height: 312px;;
+    top: 319px;
+    left: 453px;
+    padding: 32px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0px 8px 32px 0px #00000014;
+}
+%main-Modal-title {
+    width: 310px;
+    height: 26px;
+    font-family: TT Travels;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    color: #333333;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    }
+
+.modal-content-ok {
+      // position: relative;
+    @extend %main-Modal-box;
+        h2{
+            @extend %main-Modal-title ;
+            text-align: center;
+        }
+        .bigBox{
+            width: 396px;
+            height: 132px;
+            top: 401px;
+            left: 485px;
+            padding: 26px 0px 26px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                .forImg{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80px;
+                    height: 80px;
+                    top: 26px;
+                    left: 158px;
+                    padding: 16px;
+                    border-radius: 100px;
+                    gap: 10px;
+                    background: #05AE7126;
+                    p{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 20px;;
+                        background: #05AE71;
+                        text-align: center;
+                        padding: 4.8px 4.8px 4.8px 4.8px;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        // span{
+                        //     width: 38.4px;
+                        //     height: 38.4px;
+                        // color: white;
+                        // }
+                    }
+                }
+        }
+        .buttonModal{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 396px;
+            height: 44px;
+            gap: 12px;
+            .link{
+                text-decoration: none;
+            }
+            button{
+                background-color: #5558FA;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:115px;
+                height: 44px;
+                padding: 12px 16px 12px 16px;
+                border-radius: 4px;
+                gap: 8px;font-family: TT Travels;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                color:#FFFFFF;
+                border: none;
+                cursor: pointer;
+                
+                
+                
+            }
+        }
+    }
+.modal-content-no {
+    @extend %main-Modal-box;
+        h2{
+            @extend %main-Modal-title ;
+            text-align: left;
+        }
+        .bigBox{
+            width: 396px;
+            height: 132px;
+            top: 401px;
+            left: 485px;
+            padding: 26px 0px 26px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                .forImg{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80px;
+                    height: 80px;
+                    top: 26px;
+                    left: 158px;
+                    padding: 16px;
+                    border-radius: 100px;
+                    gap: 10px;
+                    background: #E84E5826;
+                    img{
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 25px;
+                        // background: #05AE71;
+                        text-align: center;
+                        padding: 4.8px 4.8px 4.8px 4.8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                       
+                    }
+                }
+        }
+        .buttonModal{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 396px;
+            height: 44px;
+            gap: 12px;
+            .link{
+                text-decoration: none;
+            }
+            button{
+                background-color: #5558FA;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:115px;
+                height: 44px;
+                padding: 12px 16px 12px 16px;
+                border-radius: 4px;
+                gap: 8px;font-family: TT Travels;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                color:#FFFFFF;
+                border: none;
+                cursor: pointer; 
+            }
+        }
+  }
+  
+
+  
+    .close {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: 0.3ms;
+    }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+  

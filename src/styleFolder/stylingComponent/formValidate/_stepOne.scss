@@ -14,6 +14,22 @@
     text-align: left;
     color: #333333;
 }
+%main-input {
+    width: 300px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 4px;
+    gap: 12px;
+    font-family: TT Travels;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: 1px solid #00000029;
+    color: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+}
 %main-paragraph {
     width: 300px;
     height: 16px;
@@ -41,20 +57,7 @@
                 @extend %main-label;
             }
             input{
-                width: 300px;
-                height: 44px;
-                padding: 12px;
-                border-radius: 4px;
-                gap: 12px;
-                font-family: TT Travels;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 20px;
-                letter-spacing: 0em;
-                text-align: left;
-                border: 1px solid #00000029;
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-                linear-gradient(0deg, #FFFFFF, #FFFFFF);
+                @extend %main-input;
             }
             p{
                 @extend %main-paragraph;
@@ -65,30 +68,79 @@
             label{
                 @extend %main-label;
             }
-            select{
-                width: 300px;
-                height: 44px;
-                padding: 12px;
-                border-radius: 4px;
+            .select-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
                 gap: 12px;
-                font-family: TT Travels;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 20px;
-                letter-spacing: 0em;
-                text-align: left;
-                border: 1px solid #00000029;
-                color: #0000007A;
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-                linear-gradient(0deg, #FFFFFF, #FFFFFF);
-                &::after{
-                    
+                select{
+                    border:none;
+                    appearance: none;
+                    width: 300px;
+                    height: 44px;
+                    padding: 12px;
+                    border-radius: 4px;
+                    gap: 12px;
+                    font-family: TT Travels;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    border: 1px solid #00000029;
+                    color: #0000007A;
+                    color: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+                    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+                     /* Style the options in the dropdown */
+                        option {
+                            width: 256px !important;
+                            height: 40px!important;
+                            padding: 8px 12px 8px 12px!important;
+                            gap: 12px!important;
+                            font-family: TT Travels!important;
+                            font-size: 30px!important;
+                            font-weight: 400!important;
+                            line-height: 20px!important;
+                            letter-spacing: 0em!important;
+                            text-align: left!important;
+                            color :#333333!important;
+                            } 
+                            &:focus{
+                                color :#333333!important;
+                                // background: #333333;
+                                outline: none;
+                        }
+                    }
+                .icon-Container{
+                    position: absolute;
+                    right: 5px ;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    .inner{
+                        height: 7.41px;
+                        width: 7.41px;
+                        border: 1.5px solid #0000003D;
+                        border-top: none; // No top border
+                        border-right: none;
+                        transform: rotate(-45deg);
+                    }
                 }
+                .custom-select select:focus {
+                    border-color: #007bff;
+                    outline: none;
+                }
+               
             }
 
             p{
                 @extend %main-paragraph;
             }
+         
         }
     }
 

@@ -58,7 +58,7 @@ export default function BarControl({steps,handleStepClick,currentStep}){
                 }
                 </div>
                     <div 
-                    style={{marginLeft:index=== 0 ?'-2px': index === 1?' 21px':index ===2?'208px':null,
+                    style={{marginLeft:index=== 0 ?'-2px': index === 1?' 21px':index ===2?'210px':null,
                     paddingTop:'5px',
                     fontFamily:' TT Travels',
                     fontSize: '14px',

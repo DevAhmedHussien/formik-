@@ -4,6 +4,8 @@ import CheckboxGroup from "./CheckBoxGroup";
 import RadioBox from "./RadioBox";
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useContext } from 'react';
+import { MyContext } from '../../context/ContextStates';
 let Data =  [{
             id:uuidv4(),
             src:vector,
@@ -13,8 +15,7 @@ let Data =  [{
         },{
             id:uuidv4(),
             src:vector,
-        }]
-
+    }]
 export default function StepTwo(){
 const [advantages,setAdvantages] = useState(Data)
 const handleAddAdvantages =()=>{
@@ -27,6 +28,7 @@ const handleRemoveAddvantages = (item)=>{
     const DeleteAddvantages = advantages.filter((element) => element.id !== item.id); // emsa7 el element 
     setAdvantages(DeleteAddvantages)
 }
+let formik = useContext(MyContext)
 return(
 <div className="BoxStepTwo">
     <div className='advantages'>
@@ -35,7 +37,12 @@ return(
             advantages.map((item,index)=>{
                 return(
                 <div key={index} className="innedAdvantages" >
-                    <input type="name"  placeholder="placeholder" />
+                    <input type="name" 
+                    id = {`advntage_${index+1}`}
+                    placeholder="placeholder"
+                    value={formik.formik.values.advantages[`advantage_${index+1}`]}
+                    onChange={formik.formik.handleChange}
+                    />
                     <img src={item.src} 
                     onClick={()=>{
                         handleRemoveAddvantages(item)

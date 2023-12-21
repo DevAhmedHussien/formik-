@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
+import { MyContext } from '../../context/ContextStates';
 const CheckboxGroup = () => {
-const [checkboxes, setCheckboxes] = useState({
-    option1: false,
-    option2: false,
-    option3: false,
-});
-const handleCheckboxChange = (option) => {
-    setCheckboxes((prevCheckboxes) => ({
-    ...prevCheckboxes,
-    [option]: !prevCheckboxes[option],
-    }));
-};
+let formik = useContext(MyContext)
+console.log(formik.formik.values)
+
 const checkboxStyle = {
     width: '16px',
     height: '16px',
@@ -19,13 +12,14 @@ const checkboxStyle = {
     background: '#0000003D',
 };
 return (
-    <div>
+<div>
         <h3>Checkbox группа</h3>
     <label style={{ display: 'flex', alignItems: 'center' }}>
         <input
         type="checkbox"
-        checked={checkboxes.option1}
-        onChange={() => handleCheckboxChange('option1')}
+        id='isChecked_1'
+        value={formik.formik.values.checkbox['isChecked_1']}
+        onChange={formik.formik.handleChange}
         style={checkboxStyle}
         />
     1
@@ -33,22 +27,24 @@ return (
     <label>
         <input
         type="checkbox"
-        checked={checkboxes.option2}
-        onChange={() => handleCheckboxChange('option2')}
+        id='isChecked_2'
+        value={formik.formik.values.checkbox['isChecked_2']}
+        onChange={formik.formik.handleChange}
         style={checkboxStyle}
         />
         2
     </label>
     <label style={{ display: 'flex', alignItems: 'center' }}>
         <input
-        type="checkbox"
-        checked={checkboxes.option3}
-        onChange={() => handleCheckboxChange('option3')}
-        style={checkboxStyle}
+            type="checkbox"
+            id='isChecked_3'
+            value={formik.formik.values.checkbox['isChecked_3']}
+            onChange={formik.formik.handleChange}
+            style={checkboxStyle}
         />
         3
     </label>
-    </div>
+</div>
 );
 };
 export default CheckboxGroup;

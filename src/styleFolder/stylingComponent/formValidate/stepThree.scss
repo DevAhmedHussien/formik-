@@ -1,3 +1,23 @@
+%main-textArea{
+    width: 680px;
+    height: 84px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 4px;
+    border: 1px;
+    gap: 12px;
+    color: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    font-family: TT Travels;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0000007A;
+    resize: none;
+    overflow: hidden;
+}
+//
 .boxStepThree{
     position: absolute;
     display: flex;
@@ -16,23 +36,33 @@
             text-align: left;
             color:  #333333;
         }
-        .textArea{
-            width: 680px;
-            height: 84px;
-            padding: 12px 12px 12px 12px;
-            border-radius: 4px;
-            border: 1px;
-            gap: 12px;
-            color: linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-            linear-gradient(0deg, #FFFFFF, #FFFFFF);
-            border: 1px solid #00000029;
-            font-family: TT Travels;
-            font-size: 14px;
-            font-weight: 400;
+        .span{
             line-height: 20px;
             letter-spacing: 0em;
-            text-align: left;
-            color: #0000007A;
+            font-family: TT Travels;
+            position: absolute;
+            right: 5px;
+            top: 91px;
+            font-size: 13px;
+            color: #5558fa;
+        }
+        .span-error{
+            line-height: 20px;
+            letter-spacing: 0em;
+            font-family: TT Travels;
+            position: absolute;
+            right: 5px;
+            top: 91px;
+            font-size: 13px;
+            color: red;
+        }
+        .textArea{
+            @extend %main-textArea;
+            border: 1px solid #00000029;
+        }
+        .error-textArea{
+            @extend %main-textArea;
+            border: 1px solid red;
         }
         p{
             width: 680px;

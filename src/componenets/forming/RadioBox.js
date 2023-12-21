@@ -1,10 +1,15 @@
 // RadioBox.js
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { MyContext } from '../../context/ContextStates';
 const RadioBox = () => {
 const [selectedOption, setSelectedOption] = useState('');
 const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
 };
+let formik = useContext(MyContext)
+console.log(formik.formik.values)
+
 const checkboxStyle = {
         width: '16px',
         height: '16px',
@@ -44,7 +49,6 @@ return (
         />
         3
     </label>
-    {/* <p>Selected option: {selectedOption}</p> */}
     </div>
 );
 };
